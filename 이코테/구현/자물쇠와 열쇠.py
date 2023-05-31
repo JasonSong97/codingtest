@@ -7,6 +7,7 @@ def turnRight(a):
             result[j][row - i - 1] = a[i][j]
     return result
 
+
 def check(newLock):
     lockLength = len(newLock) // 3
     for i in range(lockLength, lockLength * 2):    
