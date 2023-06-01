@@ -51,7 +51,7 @@ for i in x:
 
 # 3 집합 자료형
 N = int(input())
-array = list(map(int, input().split()))
+array = set(map(int, input().split()))
 
 M = int(input())
 x = list(map(int, input().split()))
