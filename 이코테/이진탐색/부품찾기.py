@@ -2,8 +2,8 @@ import sys
 
 input = sys.stdin.readline
 
-
-N = int(input())
+# 1 이진탐색
+N = int(input())                                                                                                                                                                                   
 nList = list(map(int, input().split()))
 M = int(input())
 mList = list(map(int, input().split())) 
@@ -27,6 +27,37 @@ def binarySearch(array, target, start, end):
 for target in mList:
      result = binarySearch(nList, target, 0, len(nList) - 1)
      if result != None:
+          print("yes", end = " ")
+     else:
+          print("no", end = " ")
+
+
+# 2 계수 정렬
+N = int(input())
+array = [0] * 1000001
+
+for i in input().split():
+     array[int(i)] = 1
+
+M = int(input())
+x = list(map(int, input().split()))
+
+for i in x:
+     if array[i] == 1:
+          print("yes", end = "")
+     else:
+          print("no", end = " ")
+
+
+# 3 집합 자료형
+N = int(input())
+array = list(map(int, input().split()))
+
+M = int(input())
+x = list(map(int, input().split()))
+
+for i in x:
+     if i in array:
           print("yes", end = " ")
      else:
           print("no", end = " ")
