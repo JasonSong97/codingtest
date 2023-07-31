@@ -32,7 +32,7 @@ for target in mList:
           print("no", end = " ")
 
 
-# 2 계수 정렬
+# 2 계수 정렬 -> 1,000,000 넘지 않을 때 사용
 N = int(input())
 array = [0] * 1000001
 
@@ -51,7 +51,7 @@ for i in x:
 
 # 3 집합 자료형
 N = int(input())
-array = set(map(int, input().split()))
+array = set(map(int, input().split())) # 중복 제거
 
 M = int(input())
 x = list(map(int, input().split()))

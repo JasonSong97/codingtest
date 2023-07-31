@@ -1,4 +1,4 @@
-# 1
+# 1 라이브러리 사용
 from bisect import bisect_left, bisect_right
 import sys
 
@@ -16,7 +16,7 @@ answer = countByRange(data, x, x)
 
 print(answer if answer != 0 else -1)
 
-# 2
+# 2 재귀함수 호출
 import sys
 
 input = sys.stdin.readline
@@ -57,3 +57,48 @@ def rightBinarySearch(data, target, start, end):
 
 answer = count(data, x)
 print(answer if answer != 0 else -1)
+
+# 3 while 사용
+import sys
+
+input = sys.stdin.readline
+
+N, x = map(int, input().split())
+data = list(map(int, input().split()))
+# 1 1 2 2 2 3
+
+
+def getIndex(array, leftTarget, rightTarget):
+  leftIndex = leftIndexBinarySearch(array, leftTarget, 0, N - 1)
+  if leftIndex == None:
+    return -1
+  rightIndex = rightIndexBinarySearch(array, rightTarget, 0, N - 1)
+  return rightIndex - leftIndex + 1
+
+def leftIndexBinarySearch(array, target, start, end):
+  while start <= end:
+    mid = (start + end) // 2
+
+    if target == array[mid] and (array[mid - 1] < target or mid == 0):
+      return mid
+    elif target <= array[mid]:
+      end = mid - 1
+    else:
+      start = mid + 1
+
+  return None
+
+def rightIndexBinarySearch(array, target, start, end):
+  while start <= end:
+    mid = (start + end) // 2
+
+    if target == array[mid] and (array[mid + 1] > target or mid == N - 1):
+      return mid
+    elif target < array[mid]:
+      end = mid - 1
+    else:
+      start = mid + 1
+
+  return None
+
+print(getIndex(data, x, x))

@@ -24,6 +24,7 @@ print(answer if answer != None else -1)
 import sys
 
 input = sys.stdin.readline
+
 N = int(input())
 
 def binarySearch(data, start, end):
