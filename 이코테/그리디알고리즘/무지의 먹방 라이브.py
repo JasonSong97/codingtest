@@ -11,12 +11,12 @@ def solution(food_times, k):
         # [8, 7, 5] 18
         # (5, 1) (7, 2) (8, 3) 18 > 15
         # (7, 2) (8, 3) 3 < 4
-        # 
     
     sumValue = 0
     previous = 0
     length = len(food_times)
 
+    # 음식을 다 먹는 시간 계산(포인트)
     while sumValue + ((queueList[0][0] - previous) * length) <= k:
         now = heapq.heappop(queueList)[0]
         sumValue += (now - previous) * length

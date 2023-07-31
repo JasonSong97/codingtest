@@ -1,3 +1,7 @@
+import sys
+
+input = sys.stdin.readline
+
 N = int(input())
 data = list(map(int, input().split()))
 data.sort()
@@ -9,4 +13,3 @@ for x in data:
     target += x
 
 print(target)
-

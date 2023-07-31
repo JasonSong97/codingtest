@@ -1,3 +1,7 @@
+import sys
+
+input = sys.stdin.readline
+
 n = int(input())
 people = list(map(int, input().split()))
 group = 0
