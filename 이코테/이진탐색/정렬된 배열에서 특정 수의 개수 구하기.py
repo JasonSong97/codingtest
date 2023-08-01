@@ -96,7 +96,7 @@ def rightIndexBinarySearch(array, target, start, end):
       return mid
     elif target < array[mid]:
       end = mid - 1
-    else:
+    else: # 크거나 같은 경우
       start = mid + 1
 
   return None
