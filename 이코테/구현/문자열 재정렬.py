@@ -30,3 +30,27 @@ answer.sort()
 answer += str(value)
 
 print(''.join(answer))
+
+# 3
+import sys
+
+input = sys.stdin.readline
+
+S = input().rstrip()
+
+letterList = []
+numberList = []
+
+for i in range(len(S)):
+  if 65 <= ord(S[i]) <= 90:
+    letterList.append(S[i])
+  else:
+    numberList.append(S[i])
+
+letterList.sort()
+numberList.sort()
+
+for letter in letterList:
+  print(letter, end="")
+for number in numberList:
+  print(number, end="")
