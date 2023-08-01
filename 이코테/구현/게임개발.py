@@ -1,50 +1,55 @@
-# N, M을 공백을 기준으로 구분하여 입력받기
-n, m = map(int, input().split())
+import sys
 
-d = [[0] * m for _ in range(n)]
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
 x, y, direction = map(int, input().split())
-d[x][y] = 1 # 현재 좌표 방문 처리
 
-array = []
-for i in range(n):
-    array.append(list(map(int, input().split())))
+# 지도 정보
+oceanMap = []
+for i in range(N):
+  oceanMap.append(list(map(int, input().split())))
 
+# 방문 여부 정보
+visitMap = [[0] * M for _ in range(N)]
+
+# 현재위치 표시
+visitMap[x][y] = 1
+
+# 북동남서
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
-# 왼쪽으로 회전
-def turn_left():
-    global direction
-    direction -= 1
-    if direction == -1:
-        direction = 3
+def turnLeft():
+  global direction
+  direction -= 1
+  if direction == -1:
+    direction = 3
 
-count = 1
-turn_time = 0
+visitCount = 1
+turnTime = 0
 while True:
+  turnLeft()
+  nx = x + dx[direction]
+  ny = y + dy[direction]
+  
+  if visitMap[nx][ny] == 0 and oceanMap[nx][ny] == 0:  # 방문하지 않은 경우
+    visitMap[nx][ny] = 1
+    x, y = nx, ny
+    visitCount += 1
+    turnTime = 0
+    continue
+  else:  # 방문한 경우
+    turnTime += 1
 
-    turn_left()
-    nx = x + dx[direction]
-    ny = y + dy[direction]
+  if turnTime == 4:
+    nx = x - dx[direction]
+    ny = y - dy[direction]
 
-    if d[nx][ny] == 0 and array[nx][ny] == 0:
-        d[nx][ny] = 1
-        x, y = nx, ny
-        count += 1
-        turn_time = 0
-        continue
-
+    if oceanMap[nx][ny] == 1:  # 뒤가 바다
+      break
     else:
-        turn_time += 1
+      x, y = nx, ny
+    turnTime = 0
 
-    if turn_time == 4:
-        nx = x - dx[direction]
-        ny = y - dy[direction]
-
-        if array[nx][ny] == 0:
-            x, y = nx, ny
-        else:
-            break
-        turn_time = 0
-
-print(count)
+print(visitCount)
