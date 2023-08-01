@@ -1,18 +1,21 @@
 import sys
 
-position = sys.stdin.readline() # a1
-row = int(position[1]) # 행
-column = int(ord(position[0])) - int(ord('a')) + 1
+input = sys.stdin.readline
+
+now = input() # a1
+
+row = int(now[1]) # 1 -> 1
+column = ord(now[0]) - 96 # a -> 1
+# a1 -> column, row 
+
+directions = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1)]
+
 answer = 0
+for direction in directions:
+  nextRow = row + direction[1]
+  nextColumn = column + direction[0]
 
-knight = [(-2, -1), (-2, 1), (-1, 2), (1, 2), 
-          (2, 1), (2, -1), (1, -2), (-1, -2)]
-
-for move in knight:
-    nextRow = row + move[0]
-    nextColumn = column + move[1]
-
-    if 1 <= nextRow and nextRow <= 8 and 1 <= nextColumn and nextColumn <= 8:
-        answer += 1
+  if 1 <= nextRow <= 8 and 1 <= nextColumn <= 8:
+    answer += 1
 
 print(answer)
