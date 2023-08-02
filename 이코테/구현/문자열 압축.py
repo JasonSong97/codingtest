@@ -1,20 +1,30 @@
 def solution(s): # abcabcdede
     answer = len(s)  # 10
     
-    for step in range(1, answer // 2 + 1): # 1, 2, 3, 4, 5
-        compressed = ""
-        prev = s[0 : step] 
-        count = 1
+    for compressionLevel in range(1, (len(s) // 2) + 1):
+        compress = ""
+        previous = s[0 : compressionLevel] 
+        sameLetterCount = 1
         
-        for j in range(step, len(s), step):
-            if prev == s[j : j + step]:
-                count += 1
-            else:
-                compressed += str(count) + prev if count >= 2 else prev
-                prev = s[j : j + step]
-                count = 1
+        for i in range(compressionLevel, len(s), compressionLevel):
+            
+            if previous == s[i : i + compressionLevel]: # 같으면
+                sameLetterCount += 1
+            else: # 같지 않다면
+                if sameLetterCount == 1:
+                    compress += previous
+                else:
+                    compress += str(sameLetterCount) + previous
                 
-        compressed += str(count) + prev if count >= 2 else prev
+                # 초기화
+                previous = s[i : i + compressionLevel]
+                sameLetterCount = 1
         
-        answer = min(answer, len(compressed))
+        # 남이있는 문자열 처리
+        if sameLetterCount == 1:
+            compress += previous
+        else:
+            compress += str(sameLetterCount) + previous
+        
+        answer = min(answer, len(compress))
     return answer
