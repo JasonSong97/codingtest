@@ -20,7 +20,7 @@ def solution(s): # abcabcdede
                 previous = s[i : i + compressionLevel]
                 sameLetterCount = 1
         
-        # 남이있는 문자열 처리
+        # 남이있는 문자열 처리(홀수 일 경우)
         if sameLetterCount == 1:
             compress += previous
         else:
