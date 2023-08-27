@@ -1,3 +1,6 @@
+# 푼 날짜
+# 2023/8/27
+
 def turnRight(a):
     row = len(a) # 행
     column = len(a[0]) # 열
