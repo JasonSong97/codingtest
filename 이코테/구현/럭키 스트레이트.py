@@ -1,3 +1,6 @@
+# 푼 날짜
+# 2023/8/27
+
 N = str(int(input()))
 
 length = len(N)
