@@ -1,3 +1,6 @@
+# 푼 날짜
+# 2023/8/27
+
 import sys
 
 input = sys.stdin.readline
@@ -9,8 +12,8 @@ appleMap = [[0] * (N + 1) for _ in range(N + 1)]
 
 
 for _ in range(K):
-    a, b = map(int, input().split())
-    appleMap[a][b] = 1
+    x, y = map(int, input().split())
+    appleMap[x][y] = 1
 
 plans = []
 L = int(input())
@@ -24,9 +27,9 @@ dy = [1, 0, -1, 0]
 
 def turn(direction, c):
     if c == 'L':
-        direction = (direction-1)%4
+        direction = (direction - 1) % 4
     else:
-        direction = (direction+1)%4
+        direction = (direction + 1) % 4
 
     return direction
 
@@ -36,24 +39,24 @@ def simulate():
     direction = 0 # 바라본느 방향
     time = 0 # 몇 초?
     index = 0 # 다음에 회전할 정보
-    q = [(x, y)]
+    snakeBody = [(x, y)]
 
     while True:
         nx = x + dx[direction]
         ny = y + dy[direction]
         
         # 범위에 있어? + 방문 안했어?
-        if 1<=nx and nx<=N and 1<=ny and ny<=N and appleMap[nx][ny] != 2:
+        if 1 <= nx <= N and 1 <= ny <= N and appleMap[nx][ny] != 2:
             if appleMap[nx][ny] == 0: # 사과 없음
                 appleMap[nx][ny] = 2
-                q.append((nx, ny))
+                snakeBody.append((nx, ny))
                 # 꼬리 0으로 만들기
-                px, py = q.pop(0)
+                px, py = snakeBody.pop(0)
                 appleMap[px][py] = 0
 
             if appleMap[nx][ny] == 1: # 사과 있음
                 appleMap[nx][ny] = 2
-                q.append((nx, ny))
+                snakeBody.append((nx, ny))
         else: # 벽이야? 범위에 없어?
             time += 1
             break
