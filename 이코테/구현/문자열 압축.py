@@ -1,3 +1,6 @@
+# 푼 날짜
+# 2023/8/27
+
 def solution(s): # abcabcdede
     answer = len(s)  # 10
     
