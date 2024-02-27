@@ -1,8 +1,4 @@
-# Algorithm for CodingTest
-
-[알고리즘 문제 풀이 일정 표](https://docs.google.com/spreadsheets/d/1WLdEADCg1MdYhyplaXwOi_udwoeD1AjqvyBLAc0A5D4/edit#gid=178419031)
-
-[알고리즘 노트 및 정리](https://www.notion.so/66861873a0ff4078beefc6947d83f7aa?pvs=4)
+# Coding Test
 
 ## Algorithm
 
@@ -43,36 +39,27 @@
 import resource
 import time
 
-# 시간 측정 시작
 start_time = time.time()
-
-# 메모리 사용량 측정 시작
 start_memory_usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
 # 여기에 코딩테스트 코드 작성
 
-# 메모리 사용량 측정 종료
 end_memory_usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-
-# 시간 측정 종료
 end_time = time.time()
 
-# 실행 시간 계산
 execution_time = end_time - start_time
 
 # 메모리 사용량 변환 (KB -> MB)
 memory_usage_MB = (end_memory_usage - start_memory_usage) / 1024
-
 print("메모리 사용량: {} MB".format(memory_usage_MB))
 print("실행 시간: {:.6f} 초".format(execution_time))
-
 ```
 
 ---
 
 ## 참고
 
-[이것이 취업을 위한 코딩 테스트다 with Python](https://github.com/ndb796/python-for-coding-test)
+[이것이 취업을 위한 코딩 테스트다](https://github.com/ndb796/python-for-coding-test)
 
 [leetcode](https://leetcode.com/)
 
