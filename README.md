@@ -33,7 +33,7 @@
 
 ---
 
-## 성능 확인 코드
+## 템플릿
 
 ```python
 import psutil
