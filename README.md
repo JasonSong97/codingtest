@@ -36,23 +36,23 @@
 ## 성능 확인 코드
 
 ```python
-import resource
+import psutil
 import time
 
 start_time = time.time()
-start_memory_usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+start_memory_usage = psutil.Process().memory_info().rss
 
-# 여기에 코딩테스트 코드 작성
+# 코딩 테스트 코드 시작
+# ..
+# 코딩 테스트 코드 끝
 
-end_memory_usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+end_memory_usage = psutil.Process().memory_info().rss
 end_time = time.time()
+execution_time_ms = (end_time - start_time) * 1000
 
-execution_time = end_time - start_time
-
-# 메모리 사용량 변환 (KB -> MB)
-memory_usage_MB = (end_memory_usage - start_memory_usage) / 1024
+memory_usage_MB = (end_memory_usage - start_memory_usage) / (1024 * 1024)
 print("메모리 사용량: {} MB".format(memory_usage_MB))
-print("실행 시간: {:.6f} 초".format(execution_time))
+print("실행 시간(ms): {:.2f} 밀리초".format(execution_time_ms))
 ```
 
 ---
