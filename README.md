@@ -46,7 +46,7 @@ input = sys.stdin.readline
 
 # 코딩 테스트 코드 시작
 
-
+print('정답:')
 # 코딩 테스트 코드 끝
 
 end_memory_usage = psutil.Process().memory_info().rss
