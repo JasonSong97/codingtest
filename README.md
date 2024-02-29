@@ -55,7 +55,7 @@ execution_time_ms = (end_time - start_time) * 1000
 
 memory_usage_MB = (end_memory_usage - start_memory_usage) / (1024 * 1024)
 print("메모리 사용량: {} MB".format(memory_usage_MB))
-print("실행 시간(ms): {:.2f} 밀리초".format(execution_time_ms))
+print("실행 시간(ms): {:.2f} ms".format(execution_time_ms))
 ```
 
 ---
