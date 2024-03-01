@@ -35,6 +35,8 @@
 
 ## 템플릿
 
+- macOS
+
 ```python
 import time
 import resource
@@ -58,6 +60,32 @@ end_time = time.time()
 execution_time_ms = (end_time - start_time) * 1000
 
 memory_usage_MB = end_memory_usage - start_memory_usage
+print("메모리 사용량: {:.2f} MB".format(memory_usage_MB))
+print("실행 시간(ms): {:.2f} ms".format(execution_time_ms))
+```
+
+- window
+
+```python
+import psutil
+import time
+import sys
+
+start_time = time.time()
+start_memory_usage = psutil.Process().memory_info().rss
+input = sys.stdin.readline
+
+# 코딩 테스트 코드 시작
+s = input()
+
+print('정답:')
+# 코딩 테스트 코드 끝
+
+end_memory_usage = psutil.Process().memory_info().rss
+end_time = time.time()
+execution_time_ms = (end_time - start_time) * 1000
+
+memory_usage_MB = (end_memory_usage - start_memory_usage) / (1024 * 1024)
 print("메모리 사용량: {:.2f} MB".format(memory_usage_MB))
 print("실행 시간(ms): {:.2f} ms".format(execution_time_ms))
 ```
