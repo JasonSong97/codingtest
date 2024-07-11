@@ -7,12 +7,12 @@ for _ in range(int(input())):
   else:
     d[book] = 1
 
+maxValue = max(d.values())
 answer = []
 
-maxValue = max(d.values())
 for k, v in d.items():
-    if v == maxValue:
-        answer.append(k)
+  if v == maxValue:
+    answer.append(k)
 
 answer.sort()
 print(answer[0])
