@@ -1,17 +1,14 @@
-d = dict()
-
+m = {}
 for _ in range(int(input())):
-  book = input()
-  if book in d:
-    d[book] += 1
+  word = input()
+  if word not in m:
+    m[word] = 1
   else:
-    d[book] = 1
+    m[word] += 1
 
-maxValue = max(d.values())
 answer = []
-
-for k, v in d.items():
-  if v == maxValue:
+for k, v in m.items():
+  if v == max(m.values()):
     answer.append(k)
 
 answer.sort()
