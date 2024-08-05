@@ -1,14 +1,13 @@
 from collections import deque
 
-dq = deque()
+d = deque()
 
-for i in range(1, int(input()) + 1):
-  dq.append(i)
+n = int(input())
+for i in range(1, n + 1):
+  d.append(i)
 
+while len(d) > 1:
+  d.popleft()
+  d.append(d.popleft())
 
-while (len(dq) > 1):
-  dq.popleft()
-  temp = dq.popleft()
-  dq.append(temp)
-
-print(dq.pop())
+print(d[0])
