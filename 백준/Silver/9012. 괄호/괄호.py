@@ -1,15 +1,24 @@
+answer = []
 for _ in range(int(input())):
-    stk = []
-    isVPS = True
-    for ch in input():
-        if ch == '(':
-            stk.append(ch)
-        else:
-            if stk:
-                stk.pop()
-            else:
-                isVPS = False
-                break
-    if stk:
+  stk = []
+  isVPS = True
+
+  for c in input():
+    if c == '(':
+      stk.append(c)
+    else:  # )
+      if stk:
+        stk.pop()
+      else:
         isVPS = False
-    print('YES' if isVPS else 'NO')
+
+  if stk:
+    isVPS = False
+
+  answer.append(isVPS)
+
+for a in answer:
+  if a:
+    print('YES')
+  else:
+    print('NO')
