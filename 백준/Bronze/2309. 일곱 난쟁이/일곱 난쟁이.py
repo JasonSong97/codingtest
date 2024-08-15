@@ -1,10 +1,11 @@
 from itertools import combinations
+import sys
 
-people = [int(input()) for _ in range(9)]
+input = sys.stdin.readline
 
-answer = []
-for i in combinations(people, 7):
-  if sum(i) == 100:
-    for data in sorted(i):
-      print(data)
+data = [int(input()) for _ in range(9)]
+for c in combinations(data, 7):
+  if sum(c) == 100:
+    for i in sorted(c):
+      print(i)
     break
