@@ -1,9 +1,10 @@
 str = input()
-answer = ''
 
+answer = ''
 for s in str:
-    if s.islower():
-        answer += s.upper()
-    else:
+    if s.isupper():
         answer += s.lower()
+    else:
+        answer += s.upper()
+
 print(answer)
