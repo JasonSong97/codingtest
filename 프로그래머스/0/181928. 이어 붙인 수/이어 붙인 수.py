@@ -1,10 +1,10 @@
 def solution(num_list):
-    answer = 0
-    oddSum = ""
-    evenSum = ""
+    
+    even_sum = ''
+    odd_sum = ''
     for n in num_list:
         if n % 2 == 0:
-            evenSum += str(n)
+            even_sum += str(n)
         else:
-            oddSum += str(n)
-    return int(evenSum) + int(oddSum)
+            odd_sum += str(n)
+    return int(even_sum) + int(odd_sum)
