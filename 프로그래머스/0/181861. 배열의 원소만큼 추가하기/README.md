@@ -1,10 +1,10 @@
 # [level 0] 배열의 원소만큼 추가하기 - 181861 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181861) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181861?language=python3) 
 
 ### 성능 요약
 
-메모리: 10.9 MB, 시간: 0.50 ms
+메모리: 10.3 MB, 시간: 1.46 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 11월 23일 21:35:41
+2025년 02월 07일 14:40:33
 
 ### 문제 설명
 
@@ -61,7 +61,8 @@
 <p>입출력 예 #1</p>
 
 <ul>
-<li><p>예제 1번에 대해서 a와 X를 나타내보면 다음 표와 같습니다.</p>
+<li>예제 1번에 대해서 a와 X를 나타내보면 다음 표와 같습니다.</li>
+</ul>
 <table class="table">
         <thead><tr>
 <th>a</th>
@@ -85,14 +86,13 @@
 <td>[5, 5, 5, 5, 5, 1, 4, 4, 4, 4]</td>
 </tr>
 </tbody>
-      </table>
-<p>따라서 [5, 5, 5, 5, 5, 1, 4, 4, 4, 4]를 return 합니다.</p></li>
-</ul>
-
+      </table><div class="highlight"><pre class="codehilite"><code>따라서 [5, 5, 5, 5, 5, 1, 4, 4, 4, 4]를 return 합니다.
+</code></pre></div>
 <p>입출력 예 #2</p>
 
 <ul>
-<li><p>예제 2번에 대해서 a와 X를 나타내보면 다음 표와 같습니다. </p>
+<li>예제 2번에 대해서 a와 X를 나타내보면 다음 표와 같습니다. </li>
+</ul>
 <table class="table">
         <thead><tr>
 <th>a</th>
@@ -112,14 +112,13 @@
 <td>[6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]</td>
 </tr>
 </tbody>
-      </table>
-<p>따라서 [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]를 return 합니다.</p></li>
-</ul>
-
+      </table><div class="highlight"><pre class="codehilite"><code>따라서 [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]를 return 합니다.
+</code></pre></div>
 <p>입출력 예 #3</p>
 
 <ul>
-<li><p>예제 2번에 대해서 a와 X를 나타내보면 다음 표와 같습니다. </p>
+<li>예제 2번에 대해서 a와 X를 나타내보면 다음 표와 같습니다. </li>
+</ul>
 <table class="table">
         <thead><tr>
 <th>a</th>
@@ -135,9 +134,7 @@
 <td>[1]</td>
 </tr>
 </tbody>
-      </table>
-<p>따라서 [1]을 return 합니다.</p></li>
-</ul>
-
+      </table><div class="highlight"><pre class="codehilite"><code>따라서 [1]을 return 합니다.
+</code></pre></div>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
