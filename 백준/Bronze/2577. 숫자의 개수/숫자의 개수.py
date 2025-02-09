@@ -1,15 +1,14 @@
 import sys
-
 input = sys.stdin.readline
 
-A = int(input())
-B = int(input())
-C = int(input())
+a = int(input())
+b = int(input())
+c = int(input())
 
-result = list(str(A * B * C))
+temp = a * b * c
+strTemp = str(temp)
 data = [0] * 10
-for i in range(len(result)):
-    data[int(result[i])] += 1
-
+for s in strTemp:
+    data[int(s)] += 1
 for i in range(len(data)):
-  print(data[i])
+    print(data[i])
