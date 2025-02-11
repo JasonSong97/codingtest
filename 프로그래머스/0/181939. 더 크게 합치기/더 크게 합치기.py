@@ -1,10 +1,11 @@
 def solution(a, b):
     answer = 0
-    temp1 = int(str(a) + str(b))
-    temp2 = int(str(b) + str(a))
-    if temp1 > temp2:
-        return temp1
-    elif temp1 < temp2:
-        return temp2
+    temp1 = str(a) + str(b)
+    temp2 = str(b) + str(a)
+    
+    if int(temp1) > int(temp2):
+        return int(temp1)
+    elif int(temp1) < int(temp2):
+        return int(temp2)
     else:
-        return temp1
+        return int(temp1)
