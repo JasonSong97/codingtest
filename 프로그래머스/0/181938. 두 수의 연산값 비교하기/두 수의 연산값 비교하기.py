@@ -1,9 +1,10 @@
 def solution(a, b):
-    one = int(str(a) + str(b))
-    two = 2 * a * b
-    if one == two:
-        return one
-    elif one > two:
-        return one
+    answer = 0
+    temp1 = int(str(a) + str(b))
+    temp2 = 2 * a * b
+    if temp1 > temp2:
+        return temp1
+    elif temp1 < temp2:
+        return temp2
     else:
-        return two
+        return temp1
