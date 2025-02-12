@@ -1,8 +1,11 @@
 def solution(num_list):
-    answer = [0, 0]
-    for num in num_list:
-        if num % 2 != 0:
-            answer[1] += 1
+    answer = []
+    oddCount = 0
+    evenCount = 0
+    for n in num_list:
+        if n % 2 == 0:
+            evenCount += 1
         else:
-            answer[0] += 1
-    return answer
+            oddCount += 1
+
+    return [evenCount, oddCount]
