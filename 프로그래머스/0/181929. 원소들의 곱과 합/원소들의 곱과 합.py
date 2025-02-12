@@ -1,7 +1,12 @@
 def solution(num_list):
-    answer = 0
-    numTotal = sum(num_list) * sum(num_list)
-    multiTotal = 1
+    mu = []
+    m = 1
     for n in num_list:
-        multiTotal *= n
-    return 1 if numTotal > multiTotal else 0
+        m = m * n
+    
+    a = sum(num_list)
+    s = a * a
+    if m > s:
+        return 0
+    else:
+        return 1
