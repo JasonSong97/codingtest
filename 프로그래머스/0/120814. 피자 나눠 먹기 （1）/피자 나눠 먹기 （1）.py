@@ -1,5 +1,6 @@
 def solution(n):
-    answer = n // 7
-    if n % 7 != 0:
-        answer += 1
-    return answer
+    count = n % 7
+    if count == 0:
+        return n // 7
+    else:
+        return (n // 7) + 1
