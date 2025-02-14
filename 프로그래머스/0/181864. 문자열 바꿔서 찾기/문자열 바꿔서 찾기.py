@@ -1,9 +1,12 @@
 def solution(myString, pat):
-    answer = ''
+    temp = ''
     for s in myString:
         if s == 'A':
-            answer += "B"
+            temp += 'B'
         else:
-            answer += "A"
+            temp += 'A'
     
-    return 1 if pat in answer else 0 
+    if pat in temp:
+        return 1
+    else:
+        return 0
