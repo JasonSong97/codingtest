@@ -1,2 +1,8 @@
 def solution(my_string, alp):
-    return my_string.replace(alp, alp.upper())
+    answer = ''
+    for s in my_string:
+        if s == alp:
+            answer += s.upper()
+        else:
+            answer += s
+    return answer
